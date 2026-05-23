@@ -112,7 +112,7 @@ plt.show()
 4. **Power BI** shows slight upward trend toward year's end
 
 
-## 3️⃣ Salary Analysis for Data Jobs & Skills
+## 3️⃣ [Salary Analysis for Data Jobs & Skills](04_Salary_Analysis.ipynb)
 **Approach:** Analyzed salary distributions across job titles, then compared highest-paid vs. most in-demand skills.
 
 ## Visualize Data
@@ -186,7 +186,7 @@ plt.show()
 2. Foundational skills drive employability
 
 
-## 4️⃣ Optimal Skills for Data Analysts
+## 4️⃣ [Optimal Skills for Data Analysts](05_Optimal_Skills.ipynb)
 **Approach:** Plotted skill demand percentage vs. median salary to identify high-value skills.
 
 ## Visualize Data
