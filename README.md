@@ -69,7 +69,7 @@ plt.show()
 ```
 
 Results
-![Skill_Demand](../images/1_Skill_Demand.png)
+![Skill_Demand](..images/1_Skill_Demand.png)
 
 **Key Insights:**
 1. SQL is the most requested skill for Data Analysts (51%) and Data Engineers (72%)
