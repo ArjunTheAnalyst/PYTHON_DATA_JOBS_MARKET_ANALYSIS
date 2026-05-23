@@ -106,10 +106,10 @@ plt.show()
 ![Skills_Trend](images/2_Skills_Trend.png)
 
 **Key Insights:**
-1. SQL remains most consistently demanded, though gradually decreasing
-2. Excel surged in demand from September, surpassing Python/Tableau by year-end
-3. Python & Tableau show stable demand with minor fluctuations
-4. Power BI shows slight upward trend toward year's end
+1. **SQL** remains most consistently demanded, though gradually decreasing
+2. **Excel** surged in demand from September, surpassing **Python/Tableau** by year-end
+3. **Python** & **Tableau** show stable demand with minor fluctuations
+4. **Power BI** shows slight upward trend toward year's end
 
 
 ## 3️⃣ Salary Analysis for Data Jobs & Skills
