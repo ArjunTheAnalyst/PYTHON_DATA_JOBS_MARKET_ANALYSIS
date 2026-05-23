@@ -76,3 +76,64 @@ plt.show()
 2. Python dominates for Data Scientists (72%)
 3. Data Engineers need specialized technical skills (AWS, Azure, Spark)
 4. Python is versatile across all three roles (72% for Data Scientists, 65% for Data Engineers)
+
+
+## 2️⃣ Trending Skills for Data Analysts (2023)
+**Approach:** Grouped skills by month to track demand changes throughout the year.
+
+## Visualize Data
+```
+df_plot = df_DA_US_perc.iloc[:,:5]
+
+sns.set_theme(style = 'ticks')
+
+sns.lineplot(data = df_plot, palette = 'tab10', dashes = False)
+sns.despine()
+plt.title('Trending Monthly Skills for Data Analysts in the US')
+plt.xlabel('2023')
+plt.ylabel('Likelihood in Job Postings')
+plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{int(y)}%'))
+plt.legend().set_visible(False)
+
+for i in range(5):
+    plt.text(11.2, df_plot.iloc[-1,i], df_plot.columns[i]) # fetching the last value of each column
+
+plt.tight_layout()
+plt.show()
+```
+
+## Results
+![Skills_Trend](images/2_Skills_Trend.png)
+
+**Key Insights:**
+1. SQL remains most consistently demanded, though gradually decreasing
+2. Excel surged in demand from September, surpassing Python/Tableau by year-end
+3. Python & Tableau show stable demand with minor fluctuations
+4. Power BI shows slight upward trend toward year's end
+
+
+## 3️⃣ Salary Analysis for Data Jobs & Skills
+**Approach:** Analyzed salary distributions across job titles, then compared highest-paid vs. most in-demand skills.
+
+## Visualize Data
+```
+# df_plot = [df_US['salary_year_avg'][df_US['job_title_short'] == job_title] for job_title in job_titles]
+# plt.boxplot(df_plot, vert = False, labels = job_titles)
+
+sns.set_theme(style = 'ticks')
+
+(
+    sns.boxplot(
+    data = df_US[df_US['job_title_short'].isin(job_titles)], x = 'salary_year_avg', y = 'job_title_short', 
+    
+    order = df_US[df_US['job_title_short'].isin(job_titles)].groupby('job_title_short')['salary_year_avg'].agg('median')
+    .sort_values(ascending = False).index)
+)
+sns.despine()
+plt.title('Salary Distributions for Data Jobs in the US')
+plt.xlabel('Yearly Salary ($USD)')
+plt.ylabel('')
+plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/1000)}K'))
+plt.xlim(0,600000)
+plt.show()
+```
