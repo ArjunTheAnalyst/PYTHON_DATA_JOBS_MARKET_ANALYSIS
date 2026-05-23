@@ -68,7 +68,7 @@ fig.tight_layout(h_pad = 1.0)
 plt.show()
 ```
 
-Results
+## Results
 ![Skill_Demand](images/1_Skill_Demand.png)
 
 **Key Insights:**
