@@ -78,7 +78,7 @@ plt.show()
 4. **Python** is versatile across all three roles **(72% for Data Scientists, 65% for Data Engineers)**
 
 
-## 2️⃣ Trending Skills for Data Analysts (2023)
+## 2️⃣ [Trending Skills for Data Analysts (2023)](03_Skills_Trend.ipynb)
 **Approach:** Grouped skills by month to track demand changes throughout the year.
 
 ## Visualize Data
