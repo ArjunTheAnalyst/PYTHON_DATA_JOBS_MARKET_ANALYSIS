@@ -37,7 +37,7 @@ df['job_skills'] = df['job_skills'].apply(lambda skill_list: ast.literal_eval(sk
 ```
 
 # 📈 Analysis & Results
-##1️⃣ Most Demanded Skills for Top 3 Data Roles
+## 1️⃣ Most Demanded Skills for Top 3 Data Roles
 **Approach:** Filtered the 3 most popular data roles and identified their top 5 skills.
 
 ## Visualize Data
