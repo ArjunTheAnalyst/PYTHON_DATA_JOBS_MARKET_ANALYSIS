@@ -137,3 +137,91 @@ plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/100
 plt.xlim(0,600000)
 plt.show()
 ```
+
+## Results
+![Salary_1.0](images/3.0_Salary_Analysis.png)
+
+## Salary Distribution Insights:
+1. **Senior Data Scientist** has highest earning potential (up to $600K)
+2. Senior roles show larger salary variance
+3. Specialized technical skills **(dplyr, Bitbucket, Gitlab)** command $200K+
+4. Foundational skills **(Excel, PowerPoint, SQL)** are most in-demand despite lower pay
+
+**Highest Paid vs. Most Demanded Skills:**
+```
+fig, ax = plt.subplots(2,1)
+
+sns.set_theme(style = 'ticks')
+
+# df_top_paid.plot(kind = 'barh', y = 'Median_Salary', ax = ax[0])
+# ax[0].invert_yaxis()
+sns.barplot(data = df_top_paid, x = 'Median_Salary', y = df_top_paid.index, ax = ax[0], hue = 'Median_Salary', palette = 'dark:b_r')
+ax[0].set_title('TOP PAID SKILLS')
+ax[0].legend().set_visible(False)
+ax[0].set_xlabel('')
+ax[0].set_ylabel('')
+ax[0].xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/1000)}K'))
+
+# df_top_demanded.plot(kind = 'barh', y = 'Median_Salary', ax = ax[1])
+# ax[1].invert_yaxis()
+sns.barplot(data = df_top_demanded, x = 'Median_Salary', y = df_top_demanded.index, ax = ax[1], hue = 'Median_Salary', palette = 'light:b')
+ax[1].set_title('TOP DEMANDED SKILLS')
+ax[1].legend().remove()
+ax[1].set_xlabel('Median Salary ($USD)')
+ax[1].set_ylabel('')
+ax[1].xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${int(x/1000)}K'))
+ax[1].set_xlim(ax[0].get_xlim())
+
+sns.despine()
+fig.suptitle('TOP SKILLS FOR DATA ANALYSTS IN THE US')
+fig.tight_layout(h_pad = 1.0)
+plt.show()
+```
+
+## Results
+![Salary_2.0](images/3.1_Salary_Analysis.png)
+
+**Key Insights:**
+1. Specialized technical skills command premium salaries
+2. Foundational skills drive employability
+
+
+## 4️⃣ Optimal Skills for Data Analysts
+**Approach:** Plotted skill demand percentage vs. median salary to identify high-value skills.
+
+## Visualize Data
+```
+from adjustText import adjust_text
+
+plt.figure(figsize = (8,4))
+
+# df_DA_US_pivot_high_demand_skills.plot(kind = 'scatter', x = 'Skill_Percent', y = 'Median_Salary')
+
+sns.set_theme(style = 'ticks')
+
+sns.scatterplot(data = df_plot, x = 'Skill_Percent', y = 'Median_Salary', hue = 'Technology', s = 50)
+sns.despine()
+plt.title('Most Optimal Skills for Data Analysts in the US')
+plt.xlabel('Percent of Jobs')
+plt.ylabel('Median Yearly Salary')
+plt.gca().xaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'{int(x)}%'))
+plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'${int(y/1000)}K'))
+
+texts = []
+for i, txt in enumerate(df_DA_US_pivot_high_demand_skills.index):
+    texts.append(plt.text(df_DA_US_pivot_high_demand_skills['Skill_Percent'].iloc[i], df_DA_US_pivot_high_demand_skills['Median_Salary'].iloc[i], txt))
+
+adjust_text(texts, arrowprops = dict(arrowstyle = '->', lw = 2, color = 'gray'))
+plt.tight_layout()
+plt.show()
+```
+
+## Results
+![Optimal_Skills](images/4_Optimal_Skills.png)
+
+**Key Insights:**
+1. **Oracle** offers highest median salary ($97K) despite lower demand
+2. **Python** & **Tableau** balance good salary with moderate demand
+3. Programming skills cluster at higher salary levels
+4. Database skills **(Oracle, SQL Server)** command top salaries
+5. Visualization tools **(Tableau, Power BI)** offer competitive pay with high demand
