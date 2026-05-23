@@ -225,3 +225,21 @@ plt.show()
 3. Programming skills cluster at higher salary levels
 4. Database skills **(Oracle, SQL Server)** command top salaries
 5. Visualization tools **(Tableau, Power BI)** offer competitive pay with high demand
+
+
+# 💡 What I Learned
+1. **Advanced Python**:	    Pandas, Seaborn, Matplotlib for complex data analysis
+2. **Data Cleaning**:	    Parsing nested lists with ```ast.literal_eval()```, handling null values
+3. **Strategic Analysis**:	Aligning skill development with market demand for career planning
+4. **Visualization**:    	Creating multi-plot figures, managing subplot layouts, using ```adjustText```
+
+# 🚧 Challenges Overcome
+1. **Data Inconsistencies:**         Implemented thorough cleaning for missing/irregular entries
+2. **Complex Visualizations:**       Used ```adjustText``` to manage overlapping labels on scatter plots
+3. **Balancing Depth & Breadth:**    Maintained comprehensive coverage without losing detail
+4. **Multi-plot Layouts:**           Managed subplot sizing and spacing with ```fig.tight_layout()```
+
+# 📝 Conclusion
+This exploration into the data analyst job market reveals a **clear correlation between specialized skills and higher salaries**. Programming and database skills command premium compensation, while foundational tools like **Excel** and **SQL** remain essential for employability.
+
+The dynamic nature of skill trends emphasizes the importance of **continuous learning** in data analytics. Understanding the balance between skill demand and compensation can guide strategic career development in this evolving field.
